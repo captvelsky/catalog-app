@@ -1,0 +1,20 @@
+extract file .zip
+install python & vscode (https://www.youtube.com/watch?v=OSmaWPSgvTQ&list=PLZS-MHyEIRo59lUBwU-XHH7Ymmb04ffOY)
+buka pgadmin
+	--> klik servers
+	--> klik PostgreSQL
+	--> klik databases
+	--> klik kanan postgres
+		--> pilih CREATE Script
+			--> hapus semua script yang ada query editor dan ganti dengan script yang ada di products.sql
+			--> execute script (f5)
+
+buka vscode
+open folder, lalu pilih folder yang sudah diextract
+tekan (ctrl + ~) untuk membuka terminal
+lalu masukkan (pip install flask sqlalchemy flask-sqlalchemy psycopg2) pada tab terminal dan tunggu hingga selesai
+ubah DB_PASSWORD yang ada pada file app.py agar sesuai dengan password database postgreSQL
+ketik (python app.py) pada terminal lalu tekan enter
+
+buka "localhost:5000" di browser
+done

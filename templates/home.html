@@ -1,0 +1,115 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Katalog Pertanian</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+      }
+      body {
+        padding: 32px;
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      *:focus{
+        outline: none;
+      }
+
+      .btn-add {
+        cursor: pointer;
+        border: none;
+        padding: 8px 16px;
+        color: white;
+        border-radius: 8px;
+        background: #22b93b;
+        font-weight: bold;
+        font-size: 1em;
+      }
+
+      .title,
+      .subtitle {
+        text-align: center;
+      }
+
+      .subtitle{
+        font-weight: 500;
+      }
+      th{
+        border: none;
+        background-color:#129628;
+        color: white
+      }
+      th,
+      td {
+        padding: 5px;
+      }
+      tr{
+        border: 1px solid red;
+      }
+      .table-action{
+        width: 20%;
+      }
+      .action{
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .btn-action{
+        padding: 5px 20px;
+        border: none;
+        color: white;
+        font-weight: bold;
+      }
+      .edit{
+        background-color: #22b93b;
+      }
+      .delete{
+        background-color: rgb(255, 64, 64);
+      }
+      .toolbar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+      }
+      .jumlah-katalog{
+        font-weight: bold;
+      }
+      .table-desc{
+        width: 40%;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Katalog Pertanian</h1>
+    <h2 class="subtitle">Daftar Barang Pertanian</h2>
+    <div class="toolbar">
+      <a href="/tambah"><button class="btn-add">Tambah Katalog</button></a>
+      <p class="jumlah-katalog">Jumlah Katalog: {{data.count}}</p>
+    </div>
+    <table>
+      <th>ID</th>
+      <th>Nama Barang</th>
+      <th class="table-desc">Deskripsi</th>
+      <th>Harga</th>
+      <th class="table-action">Aksi</th>
+      {% for product in data.products %}
+      <tr>
+        <td>{{product.id}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.description}}</td>
+        <td>{{product.price}}</td>
+        <td class="action">
+          <a href="/edit/{{product.id}}"><button class="btn-action edit">Edit</button></a>
+          <a href="/hapus/{{product.id}}"><button class="btn-action delete">Hapus</button></a>
+        </td>
+      </tr>
+        {% endfor %}
+    </table>
+  </body>
+</html>

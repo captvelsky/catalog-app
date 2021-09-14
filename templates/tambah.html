@@ -1,0 +1,68 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Katalog</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: sans-serif;
+      }
+      body {
+        background: linear-gradient(to bottom right, rgb(18, 216, 107), rgb(7, 136, 104));
+      }
+      h1{
+        color: white;
+      }
+      .container {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form {
+        margin-top: 32px;
+        width: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      form > * {
+        width: 100%;
+        margin: 10px 0;
+        outline: none;
+        padding: 10px;
+        border-radius: 16px;
+        border: none;
+        background-color: rgb(226, 226, 226);
+      }
+      .btn-submit{
+        cursor: pointer;
+        color: white;
+        font-weight: bold;
+        background-color: rgb(10, 175, 46);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tambah Katalog</h1>
+      <form action="/tambah" method="POST">
+        <input type="text" name="name" placeholder="Nama Produk" />
+        <textarea
+          name="description"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Deskripsi Produk"
+        ></textarea>
+        <input type="number" name="price" placeholder="Harga" />
+        <button type="submit" class="btn-submit">Simpan Katalog</button>
+      </form>
+    </div>
+  </body>
+</html>
